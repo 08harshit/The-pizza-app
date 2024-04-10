@@ -1,0 +1,39 @@
+.pizza-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.pizza-card {
+  display: flex;
+  justify-content: wrap;
+
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.pizza-image {
+  width: 100%;
+  border-radius: 10px;
+  height: 100px;
+}
+
+.pizza-details {
+  margin-top: 10px;
+}
+
+.pizza-name {
+  font-size: 20px;
+  color: #333;
+}
+
+.pizza-price {
+  color: #888;
+}
+
+.pizza-veg {
+  font-weight: bold;
+  color: green;
+}

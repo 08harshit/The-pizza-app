@@ -1,0 +1,99 @@
+<div class="pizza-container">
+  <div *ngFor="let pizza of pizzas; let i = index" class="pizza-card">
+    <img class="pizza-image" [src]="pizza.url" alt="Pizza Image" />
+    <div class="pizza-details">
+      <h2 class="pizza-name">{{ pizza.name }}</h2>
+      <p class="pizza-price">Price: ₹{{ pizza.price }}</p>
+      <p class="pizza-veg">{{ pizza.veg ? "Veg" : "Non-Veg" }}</p>
+      <div>
+        <input
+          type="checkbox"
+          name="pizza-{{ i }}"
+          (change)="onPizzaSelect($event, pizza)"
+        />
+        <label for="pizza-{{ i }}"> {{ pizza.name }}</label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ingredient-container">
+  <div
+    *ngFor="let ingredient of ingredients; let i = index"
+    class="ingredient-card"
+  >
+    <input
+      type="checkbox"
+      [id]="'ingredient-' + i"
+      [name]="'ingredient-' + i"
+      (change)="onIngredientSelect($event, ingredient)"
+    />
+    <label [for]="'ingredient-' + i">{{ ingredient.name }}</label>
+    <div class="ingredient-details">
+      <p class="ingredient-category">Category: {{ ingredient.category }}</p>
+      <p class="ingredient-price">Price: ₹{{ ingredient.price }}</p>
+    </div>
+  </div>
+</div>
+
+<!-- <br />
+@for (pizza of pizzas; track $index) {
+<div>
+  <input
+    type="checkbox"
+    name="pizza-{{ $index }}"
+    (change)="onPizzaSelect($event, pizza)"
+  />
+  <label for="pizza-{{ $index }}"> {{ pizza.name }}</label>
+</div>
+} -->
+
+<!-- <br />
+@for (ingredient of ingredients; track $index) {
+<div>
+  <input
+    type="checkbox"
+    name="ingredient{{ $index }}"
+    (change)="onIngredientSelect($event, ingredient)"
+  />
+  <label for="ingredient{{ $index }}"> {{ ingredient.name }}</label>
+</div>
+}
+
+<br />
+</div> -->
+<button type="submit" (click)="makeOrder()">Make Order</button>
+
+<div>
+  <!-- <div class="pizza-container">
+  <div *ngFor="let pizza of pizzas; let i = index" class="pizza-card">
+    <img class="pizza-image" [src]="pizza.url" alt="Pizza Image" />
+    <div class="pizza-details">
+      <h2 class="pizza-name">{{ pizza.name }}</h2>
+      <p class="pizza-price">Price: ₹{{ pizza.price }}</p>
+      <p class="pizza-veg">{{ pizza.veg ? "Veg" : "Non-Veg" }}</p>
+      <div>
+        <select
+          multiple
+          (change)="onIngredientChange($event.target.selectedOptions, pizza)"
+        >
+          <option
+            *ngFor="let ingredient of ingredients"
+            [value]="ingredient.name"
+          >
+            {{ ingredient.name }}
+          </option>
+        </select>
+      </div>
+      <div>
+        <input
+          type="checkbox"
+          name="pizza-{{ i }}"
+          (change)="onPizzaSelect($event, pizza)"
+        />
+        <label for="pizza-{{ i }}"> {{ pizza.name }}</label>
+      </div>
+    </div>
+  </div>
+</div> -->
+</div>

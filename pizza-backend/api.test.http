@@ -1,0 +1,40 @@
+POST http://localhost:3000/auth/sign-up HTTP/1.1
+content-type: application/json
+
+{
+"email": "sfsdf@gmail.com",
+"name": "Harshit",
+"password": "1234"
+}
+
+### 
+
+POST http://localhost:3000/auth/login HTTP/1.1
+content-type: application/json
+
+{
+"email": "sfsdf@gmail.com",
+"password": "1234"
+}
+
+###
+POST http://localhost:3000/ingredients/createIngredient HTTP/1.1
+content-type: application/json
+
+{
+"name":"Shimla Mirchi",
+"price":"200",
+"category":"veg"
+}
+
+
+
+###
+
+GET  http://localhost:3000/ingredients/getIngredients HTTP/1.1
+content-type: application/json
+
+###
+
+GET  http://localhost:3000/pizza HTTP/1.1
+content-type: application/json
